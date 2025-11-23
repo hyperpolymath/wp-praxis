@@ -85,6 +85,29 @@ test-e2e:
     pwsh tests/run-tests.ps1 -Suite e2e
 
 # ==============================================================================
+# FORMAL VERIFICATION (Kani)
+# ==============================================================================
+
+# Run all Kani verification proofs
+verify: verify-kani
+
+# Run Kani formal verification (wp_praxis_core)
+verify-kani:
+    @echo "Installing Kani if not present..."
+    @command -v cargo-kani >/dev/null || (cargo install --locked kani-verifier && cargo kani setup)
+    @echo "Running Kani verification on wp_praxis_core..."
+    cd wp_praxis_core && cargo kani --verbose
+
+# Run specific Kani proof
+verify-proof proof:
+    cd wp_praxis_core && cargo kani --harness {{proof}}
+
+# List all verification harnesses
+verify-list:
+    @echo "Available Kani harnesses:"
+    @grep -r "#\[kani::proof\]" wp_praxis_core/src/ -A 1 | grep "^fn " | sed 's/fn /  - /' | sed 's/().*//'
+
+# ==============================================================================
 # LINT & FORMAT TASKS
 # ==============================================================================
 

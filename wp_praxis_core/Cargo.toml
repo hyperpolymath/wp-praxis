@@ -36,3 +36,8 @@ path = "examples/validate_offline.rs"
 [[example]]
 name = "parse_manifest"
 path = "examples/parse_manifest.rs"
+
+# Kani verification configuration
+[package.metadata.kani]
+# Flags for Kani verification
+flags = ["--enable-unstable", "--cbmc-args", "--unwind", "10"]

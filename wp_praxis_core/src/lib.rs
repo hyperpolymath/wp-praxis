@@ -46,6 +46,9 @@ pub mod network;
 #[cfg(feature = "full-stack")]
 pub mod database;
 
+#[cfg(kani)]
+pub mod verification;
+
 // Re-exports for convenience
 pub use manifest::Manifest;
 pub use parser::{Parser, ParseError};
