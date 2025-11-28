@@ -1,0 +1,117 @@
+# AI Training and Usage Policy
+
+# WP Praxis AI Training Policy
+# Version: 1.0
+# Last Updated: 2025-11-22
+
+## License Applies
+
+This codebase is licensed under GNU AGPL-3.0. Any AI training on this code
+must respect the copyleft requirements:
+
+- Training data must be open source
+- Models trained on this code must disclose training data
+- Derivative works must also be AGPL-3.0 licensed
+
+## Permitted Uses
+
+✅ Training AI assistants (like Claude Code) for development help
+✅ Code completion and suggestion tools (GitHub Copilot, TabNine)
+✅ Documentation generation from code
+✅ Academic research with proper attribution
+✅ Open source model training with disclosed datasets
+
+## Prohibited Uses
+
+❌ Training proprietary models without source disclosure
+❌ Commercial model training without AGPL compliance
+❌ Using code to train models that generate proprietary code
+❌ Scraping for closed-source LLMs without attribution
+
+## Attribution Requirements
+
+When using WP Praxis code for AI training:
+
+1. **Cite the Project**:
+   - Name: WP Praxis
+   - Repository: https://github.com/hyperpolymath/wp-praxis
+   - License: GNU AGPL-3.0
+
+2. **Disclose Training Data**:
+   - If WP Praxis is part of training data, list it in dataset documentation
+   - Include commit hash or release version used
+
+3. **Respect License**:
+   - Output generated from models trained on WP Praxis should maintain AGPL compatibility
+   - Commercial use requires AGPL compliance
+
+## Code Generation
+
+AI tools that generate code based on WP Praxis:
+
+- **Must**: Indicate if generated code contains AGPL-licensed patterns
+- **Should**: Provide attribution in generated comments
+- **Cannot**: Strip license information or attribution
+
+## Example Attribution
+
+```
+# Generated with assistance from AI trained on WP Praxis
+# Source: https://github.com/hyperpolymath/wp-praxis
+# License: GNU AGPL-3.0
+# Training Data: WP Praxis v0.1.0 (commit df5e57a)
+```
+
+## CLAUDE.md
+
+WP Praxis includes a CLAUDE.md file specifically designed to help AI assistants
+understand the codebase. AI tools are encouraged to:
+
+- Read CLAUDE.md for project context
+- Follow coding standards documented there
+- Respect the polyglot architecture design
+- Maintain semantic integrity as described
+
+## Research Use
+
+Academic researchers using WP Praxis for AI/ML research should:
+
+1. Cite the repository in publications
+2. Disclose WP Praxis in training data lists
+3. Share findings with the community (via Discussions)
+4. Consider contributing improvements back
+
+## Contact
+
+Questions about AI usage of WP Praxis code:
+
+- Email: ai-policy@wp-praxis.dev
+- GitHub Discussions: https://github.com/hyperpolymath/wp-praxis/discussions
+- Issue Tracker: https://github.com/hyperpolymath/wp-praxis/issues
+
+## Philosophy
+
+WP Praxis supports:
+
+- **Open AI**: Models trained on open data with disclosed datasets
+- **Fair Use**: Academic research and educational purposes
+- **Attribution**: Proper credit for open source work
+- **Copyleft**: AGPL compliance for derivative works
+
+We believe AI training on open source code should respect:
+- Original authors' rights
+- License requirements
+- Attribution standards
+- Community norms
+
+## Updates
+
+This policy may be updated as AI technology and norms evolve. Check
+this file periodically or watch the repository for changes.
+
+---
+
+**Policy Version**: 1.0
+**Effective Date**: 2025-11-22
+**License**: GNU AGPL-3.0
+**Contact**: ai-policy@wp-praxis.dev

@@ -1,0 +1,5 @@
+/home/user/wp-praxis/wp_injector/target/release/build/serde-cb78a8558de1c08d/build_script_build-cb78a8558de1c08d.d: /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/build.rs
+
+/home/user/wp-praxis/wp_injector/target/release/build/serde-cb78a8558de1c08d/build_script_build-cb78a8558de1c08d: /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/build.rs
+
+/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/build.rs:

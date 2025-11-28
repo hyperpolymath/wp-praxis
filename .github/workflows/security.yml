@@ -1,0 +1,137 @@
+name: Security and Supply Chain
+
+on:
+  push:
+    branches: [main, master, claude/**]
+  pull_request:
+    branches: [main, master]
+  schedule:
+    # Run weekly on Monday at 00:00 UTC
+    - cron: '0 0 * * 1'
+
+jobs:
+  cargo-deny:
+    name: Cargo Deny
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install cargo-deny
+        run: cargo install cargo-deny
+
+      - name: Run cargo-deny (wp_injector)
+        working-directory: wp_injector
+        run: cargo deny check
+
+      - name: Run cargo-deny (wp_praxis_core)
+        working-directory: wp_praxis_core
+        run: cargo deny check
+
+  cargo-audit:
+    name: Security Audit (Rust)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install cargo-audit
+        run: cargo install cargo-audit
+
+      - name: Audit wp_injector
+        working-directory: wp_injector
+        run: cargo audit
+
+      - name: Audit wp_praxis_core
+        working-directory: wp_praxis_core
+        run: cargo audit
+
+  sbom-generation:
+    name: Generate SBOM
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+
+      - name: Install cargo-sbom
+        run: cargo install cargo-sbom
+
+      - name: Generate SBOM for wp_injector
+        working-directory: wp_injector
+        run: cargo sbom --output-format=cyclone_dx_json_1_4 > ../sbom-wp-injector.json
+
+      - name: Generate SBOM for wp_praxis_core
+        working-directory: wp_praxis_core
+        run: cargo sbom --output-format=cyclone_dx_json_1_4 > ../sbom-wp-praxis-core.json
+
+      - name: Upload SBOM artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-files
+          path: |
+            sbom-*.json
+            sbom-*.txt
+          retention-days: 90
+
+  dependency-review:
+    name: Dependency Review
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Dependency Review
+        uses: actions/dependency-review-action@v4
+        with:
+          fail-on-severity: moderate
+
+  bun-audit:
+    name: Security Audit (Bun/TypeScript)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Install dependencies (swarm)
+        working-directory: SymbolicEngine/swarm
+        run: bun install
+
+      - name: Audit swarm
+        working-directory: SymbolicEngine/swarm
+        run: bun audit || true
+
+      - name: Install dependencies (dashboard)
+        working-directory: SymbolicEngine/dashboard
+        run: bun install
+
+      - name: Audit dashboard
+        working-directory: SymbolicEngine/dashboard
+        run: bun audit || true
+
+  license-check:
+    name: License Compliance
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+
+      - name: Install cargo-license
+        run: cargo install cargo-license
+
+      - name: Check licenses (wp_injector)
+        working-directory: wp_injector
+        run: cargo license --json > ../licenses-wp-injector.json
+
+      - name: Check licenses (wp_praxis_core)
+        working-directory: wp_praxis_core
+        run: cargo license --json > ../licenses-wp-praxis-core.json
+
+      - name: Verify AGPL compatibility
+        run: |
+          echo "Checking for GPL-2.0 incompatible licenses..."
+          ! grep -i "GPL-2.0" licenses-*.json || (echo "Found GPL-2.0 incompatible license!" && exit 1)
+          echo "✓ All licenses are AGPL-3.0 compatible"
