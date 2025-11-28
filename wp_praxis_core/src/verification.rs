@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-FileCopyrightText: 2025 WP Praxis Contributors
+//
 //! Formal verification with Kani
 //!
 //! This module contains Kani proofs for critical paths in wp_praxis_core.

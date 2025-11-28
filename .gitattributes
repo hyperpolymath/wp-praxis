@@ -1,0 +1,90 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-FileCopyrightText: 2025 WP Praxis Contributors
+#
+# Git attributes for consistent line endings and file handling
+
+# Auto detect text files and normalize line endings to LF
+* text=auto eol=lf
+
+# Source code
+*.rs text eol=lf
+*.ex text eol=lf
+*.exs text eol=lf
+*.erl text eol=lf
+*.hrl text eol=lf
+*.php text eol=lf
+*.ps1 text eol=crlf
+*.ts text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.tsx text eol=lf
+
+# Configuration
+*.toml text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.xml text eol=lf
+*.dhall text eol=lf
+*.nix text eol=lf
+*.lock text eol=lf
+
+# Documentation
+*.md text eol=lf
+*.adoc text eol=lf
+*.txt text eol=lf
+*.rst text eol=lf
+
+# Scripts
+*.sh text eol=lf
+*.bash text eol=lf
+*.zsh text eol=lf
+*.fish text eol=lf
+justfile text eol=lf
+Justfile text eol=lf
+
+# Binary files (ensure they're not modified)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.gz binary
+*.zip binary
+*.tar binary
+*.exe binary
+*.dll binary
+*.so binary
+*.dylib binary
+
+# Archives
+*.7z binary
+*.jar binary
+*.rar binary
+*.tar.gz binary
+*.tgz binary
+
+# Diff behavior
+*.rs diff=rust
+*.ex diff=elixir
+*.php diff=php
+*.md diff=markdown
+
+# Merge behavior
+*.lock merge=binary
+Cargo.lock merge=binary
+mix.lock merge=binary
+package-lock.json merge=binary
+bun.lockb merge=binary
+
+# Linguist overrides (GitHub language statistics)
+*.md linguist-documentation
+*.adoc linguist-documentation
+examples/* linguist-documentation
+tests/* linguist-vendored=false
+docs/* linguist-documentation

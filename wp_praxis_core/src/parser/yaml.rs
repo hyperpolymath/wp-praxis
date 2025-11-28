@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-FileCopyrightText: 2025 WP Praxis Contributors
+//
 //! Simple embedded YAML parser (offline-capable)
 //!
 //! This is a minimal YAML parser for common WP Praxis manifests.

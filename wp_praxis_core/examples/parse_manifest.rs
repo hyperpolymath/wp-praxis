@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-FileCopyrightText: 2025 WP Praxis Contributors
+//
 //! Example: Parse manifests from YAML and TOML
 //!
 //! Demonstrates offline parsing with embedded parsers.

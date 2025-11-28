@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-FileCopyrightText: 2025 WP Praxis Contributors
+//
 //! Symbol data structures and types
 //!
 //! Represents symbolic operations in WP Praxis workflows.

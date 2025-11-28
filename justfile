@@ -483,3 +483,62 @@ help:
     @echo "  README.md            # Project overview"
     @echo "  CONTRIBUTING.md      # Contribution guide"
     @echo "  examples/            # Example workflows"
+
+# ==============================================================================
+# SPDX & LICENSE AUDITING
+# ==============================================================================
+
+# Audit SPDX headers on all source files
+audit-spdx:
+    @echo "=== SPDX License Audit ==="
+    @echo ""
+    @echo "Checking Rust files..."
+    @find wp_praxis_core wp_injector -name "*.rs" -type f | while read file; do \
+        if ! grep -q "SPDX-License-Identifier" "$$file"; then \
+            echo "❌ Missing SPDX header: $$file"; \
+        fi; \
+    done || echo "✓ All Rust files have SPDX headers"
+    @echo ""
+    @echo "Checking examples and tests..."
+    @find examples tests -name "*.rs" -type f 2>/dev/null | while read file; do \
+        if ! grep -q "SPDX-License-Identifier" "$$file"; then \
+            echo "❌ Missing SPDX header: $$file"; \
+        fi; \
+    done || echo "✓ All example/test files have SPDX headers"
+    @echo ""
+    @echo "Checking TypeScript files..."
+    @find SymbolicEngine -name "*.ts" -type f | head -10 | while read file; do \
+        if ! grep -q "SPDX-License-Identifier" "$$file"; then \
+            echo "⚠️  Missing SPDX header: $$file"; \
+        fi; \
+    done
+    @echo "✓ SPDX audit complete"
+
+# Audit license compliance
+audit-licence:
+    @echo "=== License Compliance Audit ==="
+    @echo ""
+    @echo "Primary License: AGPL-3.0-or-later"
+    @test -f LICENSE.txt && echo "✓ LICENSE.txt present" || echo "❌ LICENSE.txt missing"
+    @test -f LICENSE && echo "✓ LICENSE present" || echo "❌ LICENSE missing"
+    @echo ""
+    @echo "Checking Rust dependency licenses..."
+    @cd wp_praxis_core && cargo license --json 2>/dev/null | jq -r '.[]|.license' | sort -u || echo "⚠️  Install cargo-license: cargo install cargo-license"
+    @echo ""
+    @echo "✓ License audit complete"
+
+# Add SPDX headers to files missing them
+fix-spdx:
+    @echo "Adding SPDX headers to files..."
+    @find wp_praxis_core -name "*.rs" -type f | while read file; do \
+        if ! grep -q "SPDX-License-Identifier" "$$file"; then \
+            tmpfile=$$(mktemp); \
+            { echo "// SPDX-License-Identifier: AGPL-3.0-or-later"; \
+              echo "// SPDX-FileCopyrightText: 2025 WP Praxis Contributors"; \
+              echo "//"; \
+              cat "$$file"; \
+            } > "$$tmpfile" && mv "$$tmpfile" "$$file"; \
+            echo "Added header to $$file"; \
+        fi; \
+    done
+    @echo "✓ SPDX headers fixed"

@@ -1,0 +1,72 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-FileCopyrightText: 2025 WP Praxis Contributors
+#
+# HTTP 430 Consent Required Protocol
+# Specifies consent requirements for data processing
+
+## Consent Policy
+
+WP Praxis respects user privacy and requires explicit consent for:
+
+### 1. Data Collection
+- **Required**: None (offline-first by design)
+- **Optional**: Anonymous usage statistics (opt-in only)
+- **Prohibited**: Tracking, fingerprinting, third-party analytics
+
+### 2. Cookie Usage
+- **Essential**: None (stateless by design)
+- **Functional**: Local storage for preferences (client-side only)
+- **Analytics**: None
+- **Advertising**: None
+
+### 3. Third-Party Services
+- **Embedded Content**: None by default
+- **External Resources**: Only when explicitly requested by user
+- **CDNs**: Self-hosted assets preferred
+
+### 4. Data Retention
+- **User Data**: Stored locally on user's machine
+- **Server Logs**: Minimal, 7-day retention maximum
+- **Backups**: User-controlled, exportable at any time
+
+### 5. Consent Withdrawal
+- **Method**: Delete local data via settings
+- **Effect**: Immediate, no residual tracking
+- **Export**: Full data export available before deletion
+
+## GDPR Compliance
+
+WP Praxis is designed to be GDPR-compliant by default:
+
+- **Article 5**: Data minimization (offline-first = no collection)
+- **Article 6**: Lawful basis (explicit consent when required)
+- **Article 7**: Conditions for consent (clear, specific, informed)
+- **Article 13**: Information to be provided (this document)
+- **Article 15**: Right of access (data export)
+- **Article 17**: Right to erasure (delete function)
+- **Article 20**: Right to data portability (export function)
+- **Article 25**: Data protection by design (offline-first architecture)
+
+## CCPA Compliance
+
+California Consumer Privacy Act compliance:
+
+- **Right to Know**: Full transparency (this document)
+- **Right to Delete**: Immediate deletion capability
+- **Right to Opt-Out**: No selling of personal information (none collected)
+- **Right to Non-Discrimination**: Same functionality regardless of privacy choices
+
+## Contact
+
+**Privacy Inquiries**: privacy@wp-praxis.dev
+**Data Protection Officer**: dpo@wp-praxis.dev
+**Security Concerns**: security@wp-praxis.dev (see .well-known/security.txt)
+
+## Updates
+
+This consent policy is reviewed quarterly and updated as needed.
+
+**Version**: 1.0.0
+**Effective Date**: 2025-11-23
+**Last Updated**: 2025-11-23
+**Next Review**: 2026-02-23
