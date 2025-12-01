@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-FileCopyrightText: 2025 WP Praxis Contributors
+
 # IEx configuration for WpPraxis database schema
 # This file is loaded when you run `iex -S mix`
 

@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-FileCopyrightText: 2025 WP Praxis Contributors
+
 defmodule WpPraxis.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring

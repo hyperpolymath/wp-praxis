@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-FileCopyrightText: 2025 WP Praxis Contributors
+
 defmodule WpPraxis.Application do
   @moduledoc """
   The WpPraxis Application for database schema and state management.

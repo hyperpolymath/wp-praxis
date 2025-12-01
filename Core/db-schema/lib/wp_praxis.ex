@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-FileCopyrightText: 2025 WP Praxis Contributors
+
 defmodule WpPraxis do
   @moduledoc """
   WpPraxis - Modular Symbolic System for WordPress Workflows

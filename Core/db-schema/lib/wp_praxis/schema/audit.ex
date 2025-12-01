@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-FileCopyrightText: 2025 WP Praxis Contributors
+
 defmodule WpPraxis.Schema.Audit do
   @moduledoc """
   Schema for Audit entities in the WP Praxis symbolic system.
