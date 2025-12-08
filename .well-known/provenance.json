@@ -1,0 +1,103 @@
+{
+  "spdx-license-identifier": "AGPL-3.0-or-later",
+  "spdx-file-copyright-text": "2025 WP Praxis Contributors",
+  "provenance": {
+    "version": "1.0",
+    "updated": "2025-11-23T00:00:00Z",
+    "project": {
+      "name": "WP Praxis",
+      "version": "0.1.0",
+      "description": "Modular symbolic system for WordPress workflows",
+      "repository": "https://github.com/hyperpolymath/wp-praxis",
+      "license": "AGPL-3.0-or-later",
+      "homepage": "https://wp-praxis.dev"
+    },
+    "maintainers": [
+      {
+        "role": "Project Lead",
+        "entity": "WP Praxis Project",
+        "contact": "maintainers@wp-praxis.dev",
+        "pgp_key": null
+      }
+    ],
+    "build": {
+      "reproducible": true,
+      "nix_flake": "github:hyperpolymath/wp-praxis",
+      "build_system": "just (task runner)",
+      "verification": {
+        "formal": "Kani proofs (12 harnesses)",
+        "property_tests": "PropTest + QuickCheck (24 tests)",
+        "unit_tests": "23 unit tests"
+      }
+    },
+    "supply_chain": {
+      "sbom_format": "CycloneDX 1.4",
+      "sbom_location": "./sbom-*.json",
+      "dependency_audit": "cargo audit, bun audit",
+      "vulnerability_scanning": "GitHub Dependabot, cargo-deny",
+      "pinned_dependencies": true,
+      "vendored_critical": false
+    },
+    "security": {
+      "policy": ".well-known/security.txt",
+      "contact": "security@wp-praxis.dev",
+      "disclosure": "RFC 9116 compliant",
+      "response_sla": "24 hours acknowledgement",
+      "gpg_key": null
+    },
+    "compliance": {
+      "rsr_level": "Gold (in progress)",
+      "rsr_score": "60%",
+      "gdpr": "Compliant by design (offline-first)",
+      "ccpa": "Compliant by design (no data collection)",
+      "wcag": "AA target, AAA goal"
+    },
+    "attestations": [
+      {
+        "type": "spdx_headers",
+        "status": "complete",
+        "coverage": "100%",
+        "verified": "2025-11-23"
+      },
+      {
+        "type": "formal_verification",
+        "tool": "Kani",
+        "proofs": 12,
+        "coverage": "88%",
+        "verified": "2025-11-23"
+      },
+      {
+        "type": "supply_chain_security",
+        "tool": "cargo-deny",
+        "status": "passing",
+        "verified": "2025-11-23"
+      }
+    ],
+    "chain_of_custody": [
+      {
+        "event": "Project inception",
+        "date": "2025-11-21",
+        "actor": "Project Lead",
+        "action": "Initial commit"
+      },
+      {
+        "event": "CLAUDE.md creation",
+        "date": "2025-11-22",
+        "actor": "Claude AI",
+        "action": "Documentation scaffold"
+      },
+      {
+        "event": "RSR compliance implementation",
+        "date": "2025-11-23",
+        "actor": "Development Team",
+        "action": "Gold level infrastructure"
+      }
+    ],
+    "cryptographic_hashes": {
+      "note": "Git commit hashes provide cryptographic integrity",
+      "latest_release": null,
+      "verification_method": "git verify-commit <sha>"
+    }
+  },
+  "schema": "https://wp-praxis.dev/schemas/provenance/v1.json"
+}

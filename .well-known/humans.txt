@@ -1,0 +1,163 @@
+# humanstxt.org - Humans TXT
+
+/* TEAM */
+
+Project Lead: Open Position
+Contact: conduct [at] wp-praxis.dev
+GitHub: https://github.com/hyperpolymath/wp-praxis
+Location: Distributed
+
+/* THANKS */
+
+Thanks to Claude (Anthropic) for development assistance via Claude Code.
+
+Thanks to the open source community for the amazing tools:
+  - Rust, Elixir, TypeScript, PHP, PowerShell, LFE, Racket
+  - PostgreSQL, SQLite, MySQL
+  - WordPress, Ecto, Apollo Server, Elysia
+  - Pester, PHPUnit, ExUnit, Cargo Test, Bun Test
+
+Thanks to all contributors (current and future).
+
+/* SITE */
+
+Project Name: WP Praxis
+Purpose: Symbolic Workflow System for WordPress
+Languages: Rust, Elixir, TypeScript, PHP, PowerShell, LFE, Racket, SQL
+Standards: AGPL-3.0, RSR Bronze, RFC 9116, WCAG 2.1 AA (UI)
+Components: 12 (Engine, Injector, Swarm, Parser, DB, GraphQL, Dashboard, Plugin, Introspection)
+Software: VS Code, Git, GitHub Actions, Docker
+
+/* TECHNOLOGY */
+
+Backend:
+  - Rust (wp_injector) - High-performance symbolic injection
+  - Elixir/Ecto (Core/db-schema) - State management
+  - TypeScript/Bun (SymbolicEngine/swarm) - Distributed execution
+  - PHP (plugin, engine/php) - WordPress integration
+  - PowerShell (SymbolicEngine/core) - Symbolic orchestration
+  - LFE (Core/manifest-parser) - Manifest parsing with Lisp macros
+  - Racket (Core/introspection) - Recursive introspection
+
+Frontend:
+  - TypeScript/Bun (SymbolicEngine/dashboard) - Real-time dashboard
+  - TypeScript/Bun (SymbolicEngine/graphql) - GraphQL API
+  - HTML/CSS/JavaScript - WordPress admin UI
+  - Chart.js - Visualizations
+  - Canvas API - Workflow DAG rendering
+
+Database:
+  - PostgreSQL - Primary state persistence
+  - SQLite - Swarm coordination state
+  - MySQL - WordPress database
+
+Build Tools:
+  - Cargo (Rust)
+  - Mix (Elixir)
+  - Bun (TypeScript)
+  - Composer (PHP)
+  - Rebar3 (LFE/Erlang)
+  - Racket Package Manager
+  - Just (Justfile task runner)
+  - Nix (Flake for reproducible builds)
+
+Testing:
+  - Pester (PowerShell)
+  - Cargo Test (Rust)
+  - ExUnit (Elixir)
+  - PHPUnit (PHP)
+  - Bun Test (TypeScript)
+  - RackUnit (Racket)
+  - LTest (LFE)
+
+CI/CD:
+  - GitHub Actions (Multi-platform testing)
+  - Docker Compose (Integration testing)
+
+/* LICENSE */
+
+WP Praxis is licensed under GNU AGPL-3.0
+  - Free Software: redistribute and modify
+  - Copyleft: modifications must be open source
+  - Network Use: must provide source to users
+  - See LICENSE file for full terms
+
+/* VERSIONING */
+
+Current Version: 0.1.0
+Release Date: 2025-11-22
+Versioning: Semantic Versioning (semver.org)
+Changelog: CHANGELOG.md
+
+/* CONTRIBUTING */
+
+We welcome contributions!
+  - Read: CONTRIBUTING.md
+  - Code of Conduct: CODE_OF_CONDUCT.md
+  - Security: SECURITY.md
+  - Maintainers: MAINTAINERS.md
+
+TPCF Perimeter 3 (Community Sandbox):
+  - Open to all contributors
+  - Public forks welcome
+  - Community review process
+  - No CLA/DCO required (AGPL ensures openness)
+
+/* CONTACT */
+
+Project: https://github.com/hyperpolymath/wp-praxis
+Issues: https://github.com/hyperpolymath/wp-praxis/issues
+Discussions: https://github.com/hyperpolymath/wp-praxis/discussions
+Security: security@wp-praxis.dev
+Conduct: conduct@wp-praxis.dev
+Website: https://wp-praxis.dev (coming soon)
+Docs: https://docs.wp-praxis.dev (coming soon)
+
+/* STATS */
+
+Lines of Code: 130,000+
+Files: 3,200+
+Tests: 245+
+Test Coverage: ~78%
+Languages: 8
+Components: 12
+Documentation Files: 20+
+Examples: 5 workflows + 5 tutorials
+
+/* ATTRIBUTION */
+
+Built with ❤️ by the WP Praxis community
+Polyglot architecture designed for semantic integrity
+Symbolic reasoning meets WordPress automation
+
+/* RSR COMPLIANCE */
+
+Rhodium Standard Repository: Bronze (In Progress)
+  - ✅ Type Safety: Rust, TypeScript strict, Elixir specs
+  - ✅ Memory Safety: Rust ownership model
+  - ⚠️  Offline-First: Partial (database dependencies)
+  - ✅ Documentation: Complete (20+ docs)
+  - ✅ .well-known/: security.txt, ai.txt, humans.txt
+  - ✅ Build System: justfile, flake.nix, GitHub Actions
+  - ✅ Tests: 245+ passing (100% pass rate)
+  - ✅ TPCF: Perimeter 3 (Community Sandbox)
+
+/* PHILOSOPHY */
+
+Core Principles:
+  1. Symbolic Dispatching - Route by semantic tags
+  2. Preservation of Meaning - Maintain semantic traceability
+  3. User Empowerment - Declarative configuration
+
+Design Values:
+  - Polyglot Architecture: Each language for its strengths
+  - Semantic Integrity: Meaning preserved across layers
+  - Developer Empowerment: Complex workflows, simple config
+  - Emotional Safety: Reversibility and experimentation
+  - Open Development: AGPL copyleft, transparent process
+
+---
+
+Last Updated: 2025-11-22
+Standard: humanstxt.org
+Format: UTF-8

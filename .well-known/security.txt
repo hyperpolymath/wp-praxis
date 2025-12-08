@@ -1,0 +1,30 @@
+# RFC 9116 - Security.txt
+
+Contact: mailto:security@wp-praxis.dev
+Expires: 2026-11-22T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://wp-praxis.dev/.well-known/security.txt
+
+# Our security policy and reporting procedure
+Policy: https://github.com/hyperpolymath/wp-praxis/blob/master/SECURITY.md
+
+# Please report security vulnerabilities responsibly
+# DO NOT open public GitHub issues for security bugs
+
+# Acknowledgments page for security researchers
+Acknowledgments: https://github.com/hyperpolymath/wp-praxis/blob/master/SECURITY.md#acknowledgments
+
+# Hiring information (future)
+# Hiring: https://wp-praxis.dev/careers
+
+# PGP key for encrypted communication (future)
+# Encryption: https://wp-praxis.dev/.well-known/pgp-key.txt
+
+# Additional contact methods
+Contact: https://github.com/hyperpolymath/wp-praxis/security/advisories/new
+
+# Responsible disclosure timeline
+# - Initial response: Within 48 hours
+# - Status update: Within 7 days
+# - Fix timeline: Based on severity (24hrs-1month)
+# - Public disclosure: 30 days after fix release
