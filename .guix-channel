@@ -1,0 +1,7 @@
+;; wp-praxis - Guix Channel
+;; Add to ~/.config/guix/channels.scm
+
+(channel
+ (version 0)
+ (url "https://github.com/hyperpolymath/wp-praxis")
+ (branch "main"))

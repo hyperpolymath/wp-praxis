@@ -1,0 +1,23 @@
+# CITATION.cff - Citation File Format for wp-praxis
+# https://citation-file-format.github.io/
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Palimpsest-0.5
+
+cff-version: 1.2.0
+title: "wp-praxis"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: "Polymath"
+    given-names: "Hyper"
+    email: "hyperpolymath@proton.me"
+    affiliation: "Rhodium Standard / Independent Researcher"
+repository-code: "https://github.com/hyperpolymath/wp-praxis"
+url: "https://rhodium.sh/projects/wp-praxis"
+abstract: "Mature polyglot system with 130K+ LOC across 8 languages. Core components production-ready, TypeScript layer at alpha, integration work pending."
+keywords:
+  - RSR
+  - rhodium-standard
+license: "AGPL-3.0-or-later"
+license-url: "https://github.com/hyperpolymath/wp-praxis/blob/main/LICENSE.txt"
+version: "0.1.0"
+date-released: "2025-12-10"
