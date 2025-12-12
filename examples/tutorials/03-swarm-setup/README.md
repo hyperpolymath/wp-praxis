@@ -43,7 +43,7 @@ bun run src/dispatcher.ts --port 8080 --workers-min 2 --workers-max 10
 **Expected Output**:
 ```
 [INFO] WP Praxis Swarm Dispatcher starting...
-[INFO] Listening on http://0.0.0.0:8080
+[INFO] Listening on https://0.0.0.0:8080
 [INFO] Worker requirements: min=2, max=10
 [INFO] Load balancing: least_busy
 [INFO] Health check interval: 5s
@@ -59,7 +59,7 @@ cd /home/user/wp-praxis/SymbolicEngine/swarm
 
 # Start worker
 bun run src/worker.ts \
-  --dispatcher http://dispatcher-host:8080 \
+  --dispatcher https://dispatcher-host:8080 \
   --capabilities rust,php,powershell \
   --max-concurrent 3
 ```
@@ -67,7 +67,7 @@ bun run src/worker.ts \
 **Worker Output**:
 ```
 [INFO] WP Praxis Swarm Worker starting...
-[INFO] Connecting to dispatcher: http://dispatcher-host:8080
+[INFO] Connecting to dispatcher: https://dispatcher-host:8080
 [INFO] Capabilities: rust, php, powershell
 [INFO] Max concurrent tasks: 3
 [INFO] Registration successful
@@ -185,7 +185,7 @@ capabilities = ["rust", "php", "powershell", "elixir"]
 max_concurrent = 5
 
 [dispatcher]
-host = "http://dispatcher-host"
+host = "https://dispatcher-host"
 port = 8080
 reconnect_interval = 5
 heartbeat_interval = 3
@@ -288,7 +288,7 @@ After execution, check performance report:
 **Check network connectivity**:
 ```bash
 # From worker machine
-curl http://dispatcher-host:8080/health
+curl https://dispatcher-host:8080/health
 ```
 
 ### Uneven Load Distribution

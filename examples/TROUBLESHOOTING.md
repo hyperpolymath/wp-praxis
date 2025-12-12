@@ -442,7 +442,7 @@ SELECT * FROM pg_locks;
 curl http://localhost:8080/health
 
 # Check from worker machine
-curl http://dispatcher-host:8080/health
+curl https://dispatcher-host:8080/health
 
 # Check firewall
 sudo ufw status

@@ -77,7 +77,7 @@ services:
       context: ../../..
       dockerfile: examples/docker/Dockerfile.worker
     environment:
-      DISPATCHER_URL: http://swarm-dispatcher:8080
+      DISPATCHER_URL: https://swarm-dispatcher:8080
       WORKER_CAPABILITIES: rust,php,powershell
       MAX_CONCURRENT: 3
       WORDPRESS_HOST: wordpress
@@ -100,8 +100,8 @@ services:
     ports:
       - "3000:3000"
     environment:
-      GRAPHQL_ENDPOINT: http://swarm-dispatcher:4000/graphql
-      DISPATCHER_URL: http://swarm-dispatcher:8080
+      GRAPHQL_ENDPOINT: https://swarm-dispatcher:4000/graphql
+      DISPATCHER_URL: https://swarm-dispatcher:8080
     volumes:
       - ../../../SymbolicEngine/dashboard:/app/dashboard:ro
     depends_on:

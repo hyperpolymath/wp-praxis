@@ -234,9 +234,9 @@ class DashboardServer {
       console.log('  WP Praxis Symbolic Engine Dashboard');
       console.log('═══════════════════════════════════════════════════');
       console.log('');
-      console.log(`  🌐 Dashboard:   http://${host}:${port}`);
-      console.log(`  🔧 Injector:    http://${host}:${port}/injector`);
-      console.log(`  📡 API:         http://${host}:${port}${this.config.api.prefix}`);
+      console.log(`  🌐 Dashboard:   https://${host}:${port}`);
+      console.log(`  🔧 Injector:    https://${host}:${port}/injector`);
+      console.log(`  📡 API:         https://${host}:${port}${this.config.api.prefix}`);
       console.log(`  💬 WebSocket:   ws://${host}:${port}/ws`);
       console.log('');
       console.log(`  📊 Database:    ${this.db.isConnected() ? '✅ Connected' : '❌ Disconnected'}`);

@@ -326,7 +326,7 @@ Configure retention in workflow config.
 **Cause**: Network issue or dispatcher not ready
 **Solution**:
 1. Check dispatcher logs
-2. Test connectivity: `curl http://dispatcher:8080/health`
+2. Test connectivity: `curl https://dispatcher:8080/health`
 3. Verify worker capabilities match requirements
 4. Check firewall rules
 

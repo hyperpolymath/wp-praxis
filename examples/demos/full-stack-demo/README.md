@@ -207,7 +207,7 @@ docker logs wp-praxis-wordpress
 docker logs wp-praxis-dispatcher
 
 # Test network connectivity
-docker exec worker-1 curl http://swarm-dispatcher:8080/health
+docker exec worker-1 curl https://swarm-dispatcher:8080/health
 ```
 
 ### Database Migration Failed
